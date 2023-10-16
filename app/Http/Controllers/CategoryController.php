@@ -52,7 +52,7 @@ class CategoryController extends Controller
 
         if ($image =$request->file('image')) {
 
-            $destinationPath = 'img/';
+            $destinationPath = 'img/categories/';
             $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
             $image->move($destinationPath, $profileImage);
             $input['image'] = "$profileImage";
@@ -103,7 +103,7 @@ class CategoryController extends Controller
         $input = $request->all();
 
         if ($image = $request->file('image')) {
-            $destinationPath = 'img/';
+            $destinationPath = 'img/categories/';
             $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
             $image->move($destinationPath, $profileImage);
             $input['image'] = "$profileImage";

@@ -46,6 +46,73 @@ p {
     align-items: center;
 }
 
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.swiper-horizontal>.swiper-pagination-bullets.swiper-pagination-bullets-dynamic, .swiper-pagination-horizontal.swiper-pagination-bullets.swiper-pagination-bullets-dynamic {
+    left: 10%;
+    bottom: 10%;
+}
+
+.swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-main {
+    background-color: transparent;
+    border: 1px solid #C50000;
+    width: 12px;
+    height: 12px;
+}
+
+.swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-prev,
+.swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-next {
+    background-color: #B9B8BA;
+    width: 12px;
+    height: 12px;
+}
+
+.slider_text_container {
+    position: absolute;
+    left: 10%;
+    bottom: 50%;
+    text-align: start;
+}
+
+.slider_text_title {
+    font-family: Open Sans, serif;
+    font-size: 32px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 44px;
+    letter-spacing: 0;
+    color: #F2625F;
+}
+
+.slider_text_description {
+    font-family: Lora, serif;
+    font-size: 36px;
+    font-style: italic;
+    font-weight: 500;
+    line-height: 46px;
+    letter-spacing: 0;
+    color: #ffffff;
+}
+
 /*=============== BREAKPOINTS ===============*/
 @media screen and (max-width: 1200px) {
     .nav_link {
@@ -53,7 +120,14 @@ p {
     }
 }
 @media screen and (max-width: 992px) {
-
+    .slider_text_title {
+        font-size: 24px;
+        line-height: 26px;
+    }
+    .slider_text_description {
+        font-size: 18px;
+        line-height: 22px;
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -61,7 +135,23 @@ p {
 }
 
 @media screen and (max-width: 576px) {
+    .slider_text_container {
+        left: 3%;
+        bottom: 40%;
+    }
 
+    .swiper-horizontal>.swiper-pagination-bullets.swiper-pagination-bullets-dynamic, .swiper-pagination-horizontal.swiper-pagination-bullets.swiper-pagination-bullets-dynamic {
+        left: 3%;
+    }
+
+    .slider_text_title {
+        font-size: 18px;
+        line-height: 14px;
+    }
+    .slider_text_description {
+        font-size: 12px;
+        line-height: 14px;
+    }
 }
 
 @media screen and (max-width: 350px) {

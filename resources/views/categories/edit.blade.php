@@ -39,7 +39,7 @@
                         <div class="form-group">
                             <strong>Image:</strong>
                             <input type="file" name="image" class="form-control" placeholder="image">
-                            <img src="{{asset('img/'.$category->image)}}" width="300px">
+                            <img src="{{asset('img/categories/'.$category->image)}}" width="300px">
                         </div>
                     </div>
                     <div class="col-12 mt-3 text-center">

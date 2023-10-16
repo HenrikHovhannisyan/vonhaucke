@@ -23,7 +23,7 @@
                 <div class="form-group">
                     <strong>Image:</strong>
                     <div class="col-12 col-md-6">
-                        <img src="{{asset('img/'.$category->image)}}" class="img-fluid">
+                        <img src="{{asset('img/categories/'.$category->image)}}" class="img-fluid">
                     </div>
                 </div>
             </div>

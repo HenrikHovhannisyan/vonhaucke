@@ -31,7 +31,7 @@
                 <tr>
                     <td>{{ ++$i }}</td>
                     <td>
-                        <img src="{{asset('img/'.$category->image)}}" width="100px">
+                        <img src="{{asset('img/categories/'.$category->image)}}" width="100px">
                     </td>
                     <td>{{ $category->name }}</td>
                     <td>
