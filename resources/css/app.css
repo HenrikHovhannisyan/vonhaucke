@@ -118,6 +118,32 @@ p {
     margin-bottom: 42px;
 }
 
+.video-container {
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+video {
+    width: 100%;
+}
+
+#play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #9EBDB3;
+    color: #ffffff;
+    width: 98px;
+    height: 98px;
+    border-radius: 50%;
+    font-size: 38px;
+    border: none;
+    cursor: pointer;
+}
+
+
 /*=============== BREAKPOINTS ===============*/
 @media screen and (max-width: 1200px) {
     .nav_link {
@@ -132,6 +158,13 @@ p {
     .slider_text_description {
         font-size: 18px;
         line-height: 22px;
+    }
+    #play-button {
+        top: 45%;
+        transform: translate(-50%, -45%);
+        width: 55px;
+        height: 55px;
+        font-size: 24px
     }
 }
 

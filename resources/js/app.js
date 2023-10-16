@@ -29,3 +29,15 @@ let swiper = new Swiper(".mySwiper_slider", {
         disableOnInteraction: false
     }
 });
+
+function playVideo() {
+    let video = document.getElementById("custom-video");
+    let playButton = document.getElementById("play-button");
+
+    video.play();
+    playButton.style.display = "none";
+    video.addEventListener("ended", function() {
+        playButton.style.display = "block";
+    });
+}
+

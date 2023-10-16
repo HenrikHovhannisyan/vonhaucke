@@ -3,7 +3,7 @@
         <div class="swiper-wrapper">
             <div class="swiper-slide">
                    <span>
-                       <span class="slider_text_container container">
+                       <span class="slider_text_container">
                            <h3 class="slider_text_title">Vonhaucke</h3>
                             <p class="slider_text_description">
                                 We transform spaces into experiences that <br>
