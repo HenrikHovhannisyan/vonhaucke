@@ -28,6 +28,10 @@
     @yield('styles')
 </head>
 <body>
+<button id="back-to-top-button" onclick="scrollToTop()">
+    <i class="fa-solid fa-arrow-up"></i>
+</button>
+
 <div id="app">
     <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
         <div class="container">
@@ -85,6 +89,14 @@
     </main>
 
     @yield('script')
+    <script>
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+    </script>
 </div>
 </body>
 </html>

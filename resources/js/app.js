@@ -18,6 +18,16 @@ import './bootstrap';
 
 })(jQuery);
 
+window.onscroll = function() {
+    var backButton = document.getElementById('back-to-top-button');
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        backButton.style.display = 'block';
+    } else {
+        backButton.style.display = 'none';
+    }
+};
+
+
 let swiper = new Swiper(".mySwiper_slider", {
     loop: true,
     pagination: {

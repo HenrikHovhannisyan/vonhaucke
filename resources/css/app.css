@@ -1,8 +1,26 @@
 p {
     margin-bottom: 0;
 }
+
+#back-to-top-button {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #9EBDB3;
+    color: #000000;
+    border: none;
+    cursor: pointer;
+    z-index: 9;
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    font-size: 26px;
+}
+
 .nav_link {
-    font-family: Arial;
+    font-family: Arial, serif;
     font-size: 18px;
     font-weight: 400;
     line-height: 30px;
