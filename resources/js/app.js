@@ -19,6 +19,7 @@ import './bootstrap';
 })(jQuery);
 
 let swiper = new Swiper(".mySwiper_slider", {
+    loop: true,
     pagination: {
         el: ".swiper-pagination",
         dynamicBullets: true,

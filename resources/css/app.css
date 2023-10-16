@@ -113,6 +113,11 @@ p {
     color: #ffffff;
 }
 
+#partners {
+    margin-top: 42px;
+    margin-bottom: 42px;
+}
+
 /*=============== BREAKPOINTS ===============*/
 @media screen and (max-width: 1200px) {
     .nav_link {
@@ -131,7 +136,10 @@ p {
 }
 
 @media screen and (max-width: 768px) {
-
+    #partners {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
 }
 
 @media screen and (max-width: 576px) {

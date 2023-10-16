@@ -5,71 +5,23 @@
 @endsection
 
 @section('content')
-    <div class="container-fluid ps-0 pe-0">
-        <div class="swiper mySwiper_slider">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                   <span>
-                       <span class="slider_text_container">
-                           <h3 class="slider_text_title">Vonhaucke</h3>
-                            <p class="slider_text_description">
-                                We transform spaces into experiences that <br>
-                                contribute to the purpose of our clients.
-                            </p>
-                       </span>
-                       <img src="{{asset("./img/slider/1.png")}}" alt="" class="img-fluid">
-                   </span>
+    @include("components.home-slider")
+    <section id="partners">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-3">
+                    <img src="{{asset('/img/partners/1.png')}}" class="img-fluid" alt="">
                 </div>
-                <div class="swiper-slide">
-                   <span>
-                       <span class="slider_text_container">
-                           <h3 class="slider_text_title">Vonhaucke</h3>
-                            <p class="slider_text_description">
-                                We transform spaces into experiences that <br>
-                                contribute to the purpose of our clients.
-                            </p>
-                       </span>
-                       <img src="{{asset("./img/slider/2.png")}}" alt="" class="img-fluid">
-                   </span>
+                <div class="col-md-3 col-3">
+                    <img src="{{asset('/img/partners/2.png')}}" class="img-fluid" alt="">
                 </div>
-                <div class="swiper-slide">
-                   <span>
-                       <span class="slider_text_container">
-                           <h3 class="slider_text_title">Vonhaucke</h3>
-                            <p class="slider_text_description">
-                                We transform spaces into experiences that <br>
-                                contribute to the purpose of our clients.
-                            </p>
-                       </span>
-                       <img src="{{asset("./img/slider/3.png")}}" alt="" class="img-fluid">
-                   </span>
+                <div class="col-md-3 col-3">
+                    <img src="{{asset('/img/partners/3.png')}}" class="img-fluid" alt="">
                 </div>
-                <div class="swiper-slide">
-                   <span>
-                       <span class="slider_text_container">
-                           <h3 class="slider_text_title">Vonhaucke</h3>
-                            <p class="slider_text_description">
-                                We transform spaces into experiences that <br>
-                                contribute to the purpose of our clients.
-                            </p>
-                       </span>
-                       <img src="{{asset("./img/slider/4.png")}}" alt="" class="img-fluid">
-                   </span>
-                </div>
-                <div class="swiper-slide">
-                   <span>
-                       <span class="slider_text_container">
-                           <h3 class="slider_text_title">Vonhaucke</h3>
-                            <p class="slider_text_description">
-                                We transform spaces into experiences that <br>
-                                contribute to the purpose of our clients.
-                            </p>
-                       </span>
-                       <img src="{{asset("./img/slider/5.png")}}" alt="" class="img-fluid">
-                   </span>
+                <div class="col-md-3 col-3">
+                    <img src="{{asset('/img/partners/4.png')}}" class="img-fluid" alt="">
                 </div>
             </div>
-            <div class="swiper-pagination"></div>
         </div>
-    </div>
+    </section>
 @endsection
