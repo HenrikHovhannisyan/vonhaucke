@@ -1,3 +1,7 @@
+body {
+    max-width: 1924px;
+    margin: auto;
+}
 p {
     margin-bottom: 0;
 }

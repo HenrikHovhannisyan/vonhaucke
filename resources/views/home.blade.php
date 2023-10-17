@@ -7,7 +7,7 @@
 @section('content')
     @include("components.home-slider")
     <section id="partners">
-        <div class="container">
+        <div class="container-fluid text-center">
             <div class="row">
                 <div class="col-md-3 col-3">
                     <img src="{{asset('/img/partners/1.png')}}" class="img-fluid" alt="">
