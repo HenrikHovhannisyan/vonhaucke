@@ -5,7 +5,28 @@
 @endsection
 
 @section('content')
-    @include("components.home-slider")
+    <section id="slider">
+        <div class="container-fluid ps-0 pe-0">
+            <div class="swiper mySwiper_slider">
+                <div class="swiper-wrapper">
+                    @foreach($sliders as $slider)
+                        <div class="swiper-slide">
+                           <span>
+                               <span class="slider_text_container">
+                                   <h3 class="slider_text_title">{{$slider->title}}</h3>
+                                    <p class="slider_text_description">
+                                        {{$slider->description}}
+                                    </p>
+                               </span>
+                               <img src="{{asset("./img/sliders/" . $slider->image)}}" alt="" class="img-fluid">
+                           </span>
+                        </div>
+                    @endforeach
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
     <section id="partners">
         <div class="container-fluid text-center">
             <div class="row">
@@ -46,7 +67,7 @@
 
             video.play();
             playButton.style.display = "none";
-            video.addEventListener("ended", function() {
+            video.addEventListener("ended", function () {
                 playButton.style.display = "block";
             });
         }
