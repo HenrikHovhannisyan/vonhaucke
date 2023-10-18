@@ -27,19 +27,6 @@ window.onscroll = function() {
     }
 };
 
-
-let swiper = new Swiper(".mySwiper_slider", {
-    loop: true,
-    pagination: {
-        el: ".swiper-pagination",
-        dynamicBullets: true,
-    },
-    autoplay: {
-        delay: 5000,
-        disableOnInteraction: false
-    }
-});
-
 function playVideo() {
     let video = document.getElementById("custom-video");
     let playButton = document.getElementById("play-button");

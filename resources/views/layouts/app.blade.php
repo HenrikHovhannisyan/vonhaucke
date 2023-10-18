@@ -90,6 +90,18 @@
 
     @yield('script')
     <script>
+        let swiper = new Swiper(".mySwiper_slider", {
+            loop: true,
+            pagination: {
+                el: ".swiper-pagination",
+                dynamicBullets: true,
+            },
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false
+            }
+        });
+
         function scrollToTop() {
             window.scrollTo({
                 top: 0,
