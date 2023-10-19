@@ -105,17 +105,25 @@ class SliderController extends Controller
 
         if ($image = $request->file('image')) {
             $destinationPath = 'img/sliders/';
+
+            if ($slider->image) {
+                $oldImagePath = public_path($destinationPath . $slider->image);
+                if (file_exists($oldImagePath)) {
+                    unlink($oldImagePath);
+                }
+            }
+
             $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
             $image->move($destinationPath, $profileImage);
-            $input['image'] = "$profileImage";
-        }else{
+            $input['image'] = $profileImage;
+        } else {
             unset($input['image']);
         }
 
         $slider->update($input);
 
         return redirect()->route('sliders.index')
-            ->with('success','Slider updated successfully');
+            ->with('success', 'Slider updated successfully');
     }
 
     /**
@@ -126,9 +134,18 @@ class SliderController extends Controller
      */
     public function destroy(Slider $slider)
     {
+        if ($slider->image) {
+            $destinationPath = 'img/sliders/';
+            $imagePath = public_path($destinationPath . $slider->image);
+
+            if (file_exists($imagePath)) {
+                unlink($imagePath);
+            }
+        }
+
         $slider->delete();
 
         return redirect()->route('sliders.index')
-            ->with('success','Slider deleted successfully');
+            ->with('success', 'Slider deleted successfully');
     }
 }

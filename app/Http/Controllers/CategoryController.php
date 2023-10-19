@@ -104,17 +104,26 @@ class CategoryController extends Controller
 
         if ($image = $request->file('image')) {
             $destinationPath = 'img/categories/';
+
+            if ($category->image) {
+                $oldImagePath = public_path($destinationPath . $category->image);
+                if (file_exists($oldImagePath)) {
+                    unlink($oldImagePath);
+                }
+            }
+
             $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
             $image->move($destinationPath, $profileImage);
-            $input['image'] = "$profileImage";
-        }else{
+            $input['image'] = $profileImage;
+        } else {
             unset($input['image']);
         }
 
         $category->update($input);
 
         return redirect()->route('categories.index')
-            ->with('success','Category updated successfully');
+            ->with('success', 'Category updated successfully');
+
     }
 
     /**
@@ -125,9 +134,19 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
+        if ($category->image) {
+            $destinationPath = 'img/categories/';
+            $imagePath = public_path($destinationPath . $category->image);
+
+            if (file_exists($imagePath)) {
+                unlink($imagePath);
+            }
+        }
+
         $category->delete();
 
         return redirect()->route('categories.index')
-            ->with('success','Category deleted successfully');
+            ->with('success', 'Category deleted successfully');
     }
+
 }
