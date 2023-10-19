@@ -103,17 +103,25 @@ class PartnerController extends Controller
 
         if ($image = $request->file('image')) {
             $destinationPath = 'img/partners/';
+
+            if ($partner->image) {
+                $oldImagePath = public_path($destinationPath . $partner->image);
+                if (file_exists($oldImagePath)) {
+                    unlink($oldImagePath);
+                }
+            }
+
             $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
             $image->move($destinationPath, $profileImage);
-            $input['image'] = "$profileImage";
-        }else{
+            $input['image'] = $profileImage;
+        } else {
             unset($input['image']);
         }
 
         $partner->update($input);
 
         return redirect()->route('partners.index')
-            ->with('success','Partner updated successfully');
+            ->with('success', 'Partner updated successfully');
     }
 
     /**
@@ -124,9 +132,18 @@ class PartnerController extends Controller
      */
     public function destroy(Partner $partner)
     {
+        if ($partner->image) {
+            $destinationPath = 'img/partners/';
+            $imagePath = public_path($destinationPath . $partner->image);
+
+            if (file_exists($imagePath)) {
+                unlink($imagePath);
+            }
+        }
+
         $partner->delete();
 
         return redirect()->route('partners.index')
-            ->with('success','Partner deleted successfully');
+            ->with('success', 'Partner deleted successfully');
     }
 }
