@@ -40,7 +40,7 @@
                                         </button>
                                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                                             <li><a class="dropdown-item" href="{{route('sliders.index')}}">Slider</a></li>
-                                            <li><a class="dropdown-item" href="#">Partners</a></li>
+                                            <li><a class="dropdown-item" href="{{route('partners.index')}}">Partners</a></li>
                                         </ul>
                                     </div>
                                 </div>
