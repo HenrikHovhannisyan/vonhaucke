@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('description');
             $table->string('about');
             $table->string('characteristics');
-            $table->string('image');
+            $table->json('images');
             $table->string('pdf');
             $table->timestamps();
         });

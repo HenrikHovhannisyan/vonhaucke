@@ -19,7 +19,7 @@
                             </li>
                             <li class="list-group-item d-flex justify-content-between align-items-start">
                                 <div class="ms-2 me-auto">
-                                    <a href="{{route('categories.index')}}"
+                                    <a href="{{route('products.index')}}"
                                        class="fw-bold text-dark text-decoration-none">
                                         Products
                                     </a>
