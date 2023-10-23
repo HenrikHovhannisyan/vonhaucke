@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreProductRequest;
-use App\Http\Requests\UpdateProductRequest;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
@@ -50,13 +49,12 @@ class ProductController extends Controller
             'description' => 'required',
             'about' => 'required',
             'characteristics' => 'required',
-            'images.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048', // Allow multiple images
-            'pdf' => 'file|mimes:pdf|max:2048', // Allow a PDF file
+            'images.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'pdf' => 'file|mimes:pdf|max:2048',
         ]);
 
         $input = $request->all();
 
-        // Handle multiple images
         if ($request->hasFile('images')) {
             $imagePaths = [];
 
@@ -67,10 +65,9 @@ class ProductController extends Controller
                 $imagePaths[] = $destinationPath . $profileImage;
             }
 
-            $input['images'] = json_encode($imagePaths); // Store as a JSON array
+            $input['images'] = json_encode($imagePaths);
         }
 
-        // Handle the PDF file
         if ($pdfFile = $request->file('pdf')) {
             $destinationPath = 'pdf/products';
             $pdfFileName = date('YmdHis') . "." . $pdfFile->getClientOriginalExtension();
@@ -122,17 +119,15 @@ class ProductController extends Controller
             'description' => 'required',
             'about' => 'required',
             'characteristics' => 'required',
-            'images.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048', // Allow multiple images
-            'pdf' => 'file|mimes:pdf|max:2048', // Allow a PDF file
+            'images.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'pdf' => 'file|mimes:pdf|max:2048',
         ]);
 
         $input = $request->all();
 
-        // Handle the PDF file
         if ($pdfFile = $request->file('pdf')) {
             $destinationPath = 'pdf/products';
 
-            // Delete existing PDF file
             if ($product->pdf) {
                 $oldPdfPath = public_path($product->pdf);
                 if (file_exists($oldPdfPath)) {
@@ -145,7 +140,6 @@ class ProductController extends Controller
             $input['pdf'] = $destinationPath . '/' . $pdfFileName;
         }
 
-        // Handle the images
         if ($request->hasFile('images')) {
             $imagePaths = [];
 
@@ -155,9 +149,8 @@ class ProductController extends Controller
                 $image->move($destinationPath, $profileImage);
                 $imagePaths[] = $destinationPath . '/' . $profileImage;
             }
-            $input['images'] = json_encode($imagePaths); // Store as a JSON array
+            $input['images'] = json_encode($imagePaths);
 
-            // Delete existing images
             if ($product->images) {
                 $existingImages = json_decode($product->images);
                 foreach ($existingImages as $oldImage) {
@@ -185,7 +178,6 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
-        // Delete old image files if they exist
         if ($product->images) {
             $existingImages = json_decode($product->images);
             foreach ($existingImages as $oldImage) {
@@ -196,7 +188,6 @@ class ProductController extends Controller
             }
         }
 
-        // Delete old PDF file if it exists
         if ($product->pdf) {
             $pdfPath = public_path($product->pdf);
             if (file_exists($pdfPath)) {
