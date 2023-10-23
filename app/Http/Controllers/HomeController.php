@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Info;
 use App\Models\Partner;
 use App\Models\Slider;
 use Illuminate\Contracts\Support\Renderable;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
 
 class HomeController extends Controller
 {
@@ -17,6 +20,7 @@ class HomeController extends Controller
     {
         $sliders = Slider::all();
         $partners = Partner::all()->reverse()->take(4);
-        return view('home', compact('sliders', 'partners'));
+        $info = Info::all();
+        return view('home', compact('sliders', 'partners', 'info'));
     }
 }

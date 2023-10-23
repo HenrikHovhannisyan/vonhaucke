@@ -2,8 +2,22 @@ body {
     max-width: 1924px;
     margin: auto;
 }
+
+a {
+    text-decoration: none;
+}
+
 p {
     margin-bottom: 0;
+}
+
+#footer {
+    background-color: #262728;
+    color: #FFFFFA;
+}
+
+footer a {
+    color: #FFFFFA;
 }
 
 #back-to-top-button {
@@ -164,6 +178,21 @@ video {
     font-size: 38px;
     border: none;
     cursor: pointer;
+}
+
+.footer_soc {
+    font-size: 31px;
+    margin: 12px;
+}
+
+.footer_link {
+    font-family: Arial, serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 27px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #FFFFFA;
 }
 
 
