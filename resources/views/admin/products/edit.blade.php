@@ -55,16 +55,20 @@
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
                             <strong>Image:</strong>
-                            <input type="file" name="image" class="form-control" placeholder="image" multiple>
+                            <input type="file" name="images[]" class="form-control" placeholder="image" multiple>
                             @foreach(json_decode($product->images) as $imagePath)
                                 <img src="{{asset($imagePath)}}" width="300px" class="m-1">
                             @endforeach
                         </div>
                         <div class="form-group">
                             <strong>PDF:</strong>
-                            <input type="file" name="pdf" class="form-control" placeholder="pdf">
-                            <a href="{{ asset($product->pdf) }}" class="text-dark" target="_blank">View File</a>
+                            @if ($product->pdf)
+                                <a href="{{ asset($product->pdf) }}" class="text-dark" target="_blank">View Current PDF</a>
+                                <br>
+                            @endif
+                            <input type="file" name="pdf" class="form-control" accept=".pdf">
                         </div>
+
                     </div>
                     <div class="col-12 mt-3 text-center">
                         <button type="submit" class="btn btn-primary">Edit</button>

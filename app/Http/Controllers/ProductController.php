@@ -9,6 +9,8 @@ use App\Http\Requests\UpdateProductRequest;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Str;
+
 
 class ProductController extends Controller
 {
@@ -21,7 +23,7 @@ class ProductController extends Controller
     {
         $products = Product::latest()->paginate(5);
 
-        return view('admin.products.index',compact('products'))
+        return view('admin.products.index', compact('products'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
@@ -60,7 +62,7 @@ class ProductController extends Controller
 
             foreach ($request->file('images') as $image) {
                 $destinationPath = 'img/products/';
-                $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+                $profileImage = date('YmdHis') . '_' . Str::random(5) . "." . $image->getClientOriginalExtension();
                 $image->move($destinationPath, $profileImage);
                 $imagePaths[] = $destinationPath . $profileImage;
             }
@@ -70,10 +72,10 @@ class ProductController extends Controller
 
         // Handle the PDF file
         if ($pdfFile = $request->file('pdf')) {
-            $destinationPath = 'pdf/products/';
+            $destinationPath = 'pdf/products';
             $pdfFileName = date('YmdHis') . "." . $pdfFile->getClientOriginalExtension();
             $pdfFile->move($destinationPath, $pdfFileName);
-            $input['pdf'] = $destinationPath . $pdfFileName;
+            $input['pdf'] = $destinationPath . '/' . $pdfFileName;
         }
 
         Product::create($input);
@@ -91,7 +93,7 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        return view('admin.products.show',compact('product'));
+        return view('admin.products.show', compact('product'));
     }
 
     /**
@@ -102,13 +104,13 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        return view('admin.products.edit',compact('product'));
+        return view('admin.products.edit', compact('product'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param UpdateProductRequest $request
+     * @param Request $request
      * @param Product $product
      * @return RedirectResponse
      */
@@ -125,30 +127,6 @@ class ProductController extends Controller
         ]);
 
         $input = $request->all();
-
-        // Handle multiple images
-        if ($request->hasFile('images')) {
-            $imagePaths = $product->images ? json_decode($product->images) : [];
-
-            $destinationPath = 'img/products';
-
-            // Delete existing images
-            foreach ($imagePaths as $oldImage) {
-                $oldImagePath = public_path($oldImage);
-                if (file_exists($oldImagePath)) {
-                    unlink($oldImagePath);
-                }
-            }
-
-            // Upload new images and append to the existing ones
-            foreach ($request->file('images') as $image) {
-                $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
-                $image->move($destinationPath, $profileImage);
-                $imagePaths[] = $destinationPath . '/' . $profileImage;
-            }
-
-            $input['images'] = json_encode($imagePaths); // Store as a JSON array
-        }
 
         // Handle the PDF file
         if ($pdfFile = $request->file('pdf')) {
@@ -167,11 +145,36 @@ class ProductController extends Controller
             $input['pdf'] = $destinationPath . '/' . $pdfFileName;
         }
 
+        // Handle the images
+        if ($request->hasFile('images')) {
+            $imagePaths = [];
+
+            foreach ($request->file('images') as $image) {
+                $destinationPath = 'img/products';
+                $profileImage = date('YmdHis') . '_' . Str::random(5) . "." . $image->getClientOriginalExtension();
+                $image->move($destinationPath, $profileImage);
+                $imagePaths[] = $destinationPath . '/' . $profileImage;
+            }
+            $input['images'] = json_encode($imagePaths); // Store as a JSON array
+
+            // Delete existing images
+            if ($product->images) {
+                $existingImages = json_decode($product->images);
+                foreach ($existingImages as $oldImage) {
+                    $oldImagePath = public_path($oldImage);
+                    if (file_exists($oldImagePath)) {
+                        unlink($oldImagePath);
+                    }
+                }
+            }
+        }
+
         $product->update($input);
 
         return redirect()->route('products.index')
             ->with('success', 'Product updated successfully');
     }
+
 
 
     /**
@@ -182,12 +185,22 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
-        if ($product->image) {
-            $destinationPath = 'img/products/';
-            $imagePath = public_path($destinationPath . $product->image);
+        // Delete old image files if they exist
+        if ($product->images) {
+            $existingImages = json_decode($product->images);
+            foreach ($existingImages as $oldImage) {
+                $oldImagePath = public_path($oldImage);
+                if (file_exists($oldImagePath)) {
+                    unlink($oldImagePath);
+                }
+            }
+        }
 
-            if (file_exists($imagePath)) {
-                unlink($imagePath);
+        // Delete old PDF file if it exists
+        if ($product->pdf) {
+            $pdfPath = public_path($product->pdf);
+            if (file_exists($pdfPath)) {
+                unlink($pdfPath);
             }
         }
 
@@ -196,4 +209,5 @@ class ProductController extends Controller
         return redirect()->route('products.index')
             ->with('success', 'Product deleted successfully');
     }
+
 }
