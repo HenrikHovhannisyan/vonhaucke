@@ -45,6 +45,9 @@
                                     </div>
                                 </div>
                             </li>
+                            <li class="list-group-item">
+                                <a class="fw-bold text-dark text-decoration-none" href="{{route('info.index')}}">Info</a>
+                            </li>
                         </ol>
                     </div>
                 </div>

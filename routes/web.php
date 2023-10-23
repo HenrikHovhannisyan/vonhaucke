@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\InfoController;
 use App\Http\Controllers\PartnerController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SliderController;
@@ -26,6 +27,7 @@ Route::middleware(['auth', 'is_admin'])->prefix('admin')->group(function () {
     Route::resource('products', ProductController::class);
     Route::resource('sliders', SliderController::class);
     Route::resource('partners', PartnerController::class);
+    Route::resource('info', InfoController::class);
 });
 
 Auth::routes();

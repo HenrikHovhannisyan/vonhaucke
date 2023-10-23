@@ -63,6 +63,9 @@
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
+                            <li>
+                                <a class="dropdown-item" href="{{route('info.index')}}">Info</a>
+                            </li>
                         </ul>
                     </li>
                 </ul>
