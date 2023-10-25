@@ -53,6 +53,6 @@
             @endforeach
         </table>
 
-        {!! $categories->links() !!}
+        {!! $categories->links('vendor.pagination.bootstrap-5') !!}
     </div>
 @endsection

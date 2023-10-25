@@ -55,6 +55,6 @@
             @endforeach
         </table>
 
-        {!! $sliders->links() !!}
+        {!! $sliders->links('vendor.pagination.bootstrap-5') !!}
     </div>
 @endsection
