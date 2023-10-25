@@ -58,7 +58,12 @@
                     <div class="product_item">
                         @foreach(json_decode($product->images) as $key => $imagePath)
                             @if ($key === 0)
-                                <img src="{{ asset($imagePath) }}" class="img-fluid product_img" alt="">
+                                <div class="hover-show">
+                                    <img src="{{ asset($imagePath) }}" class="img-fluid product_img" alt="">
+                                    <div class="hover-show-button">
+                                        <a href="{{ route('products-show',$product->id) }}">View</a>
+                                    </div>
+                                </div>
                             @endif
                         @endforeach
                         <p class="product_name">{{$product->name}}</p>

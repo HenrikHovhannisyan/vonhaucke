@@ -227,6 +227,7 @@ video {
 .product_item {
     max-height: 670px;
     text-align: left;
+    cursor: pointer;
 }
 
 .product_img {
@@ -246,6 +247,42 @@ video {
     margin-top: 18px;
 }
 
+.hover-show {
+    position: relative;
+}
+
+.hover-show-button {
+    display: none;
+}
+
+.hover-show-button > a {
+    width: 98px;
+    height: 98px;
+    border-radius: 50%;
+    background-color: #9EBDB3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Lora, serif;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 27px;
+    letter-spacing: 0;
+    color: #000103;
+}
+
+.product_item:hover .hover-show-button {
+    position: absolute;
+    top: 0;
+    background-color: #00010380;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
 
 /*=============== BREAKPOINTS ===============*/
 @media screen and (max-width: 1200px) {
@@ -255,6 +292,12 @@ video {
     .product_img {
         width: 300px;
         height: 300px;
+    }
+
+    .hover-show-button > a {
+        width: 75px;
+        height: 75px;
+        font-size: 16px;
     }
 }
 
@@ -277,6 +320,12 @@ video {
         height: 55px;
         font-size: 24px
     }
+
+    .hover-show-button > a {
+        width: 55px;
+        height: 55px;
+        font-size: 14px;
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -287,6 +336,11 @@ video {
     .product_img {
         width: 220px;
         height: 220px;
+    }
+    .hover-show-button > a {
+        width: 40px;
+        height: 40px;
+        font-size: 12px;
     }
 }
 

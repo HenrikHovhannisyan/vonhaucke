@@ -25,4 +25,15 @@ class HomeController extends Controller
         $products = Product::inRandomOrder()->take(3)->get();
         return view('home', compact('sliders', 'partners', 'info', 'products'));
     }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param Product $product
+     * @return Factory|View
+     */
+    public function show(Product $product)
+    {
+        return view('product-show', compact('product'));
+    }
 }
