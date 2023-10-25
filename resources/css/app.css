@@ -50,19 +50,23 @@ footer a {
 .navbar-form-search {
     position: relative;
 }
+
 .navbar-form-search .form-control {
     width: 250px;
 }
+
 .navbar-form-search .btn {
     border: 0;
     background: transparent;
     font-size: 18px;
 }
+
 .navbar-form-search .btn:active, .navbar-form-search .btn:hover, .navbar-form-search .btn:focus {
     color: #000;
     outline: none;
     box-shadow: none;
 }
+
 .navbar-form-search .search-form-container {
     text-align: right;
     position: absolute;
@@ -74,9 +78,11 @@ footer a {
     z-index: 9;
     transition: all 0.3s ease-in-out;
 }
+
 .navbar-form-search .search-form-container.hdn {
     width: 0;
 }
+
 .navbar-form-search .search-form-container .search-input-group {
     display: flex;
     align-items: center;
@@ -103,7 +109,7 @@ footer a {
     object-fit: cover;
 }
 
-.swiper-horizontal>.swiper-pagination-bullets.swiper-pagination-bullets-dynamic, .swiper-pagination-horizontal.swiper-pagination-bullets.swiper-pagination-bullets-dynamic {
+.swiper-horizontal > .swiper-pagination-bullets.swiper-pagination-bullets-dynamic, .swiper-pagination-horizontal.swiper-pagination-bullets.swiper-pagination-bullets-dynamic {
     left: 10%;
     bottom: 10%;
 }
@@ -156,6 +162,7 @@ footer a {
 }
 
 .video-container {
+    background-color: #000000;
     position: relative;
     max-width: 100%;
     overflow: hidden;
@@ -195,23 +202,74 @@ video {
     color: #FFFFFA;
 }
 
+#products {
+    background-color: #000000;
+    padding-top: 160px;
+}
+
+.product_title {
+    font-family: Lora, serif;
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 52px;
+    letter-spacing: 0;
+    text-align: left;
+    color: #FFFFFA;
+    margin-bottom: 32px;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.product_item {
+    max-height: 670px;
+    text-align: left;
+}
+
+.product_img {
+    width: 450px;
+    height: 450px;
+    object-fit: cover;
+}
+
+.product_name {
+    font-family: Arial;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 36px;
+    letter-spacing: 0;
+    text-align: left;
+    color: #FFFFFA;
+    margin-top: 18px;
+}
+
 
 /*=============== BREAKPOINTS ===============*/
 @media screen and (max-width: 1200px) {
     .nav_link {
         margin-left: 0;
     }
+    .product_img {
+        width: 300px;
+        height: 300px;
+    }
 }
+
 @media screen and (max-width: 992px) {
     .slider_text_title {
         font-size: 24px;
         line-height: 26px;
     }
+
     .slider_text_description {
         max-width: 435px;
         font-size: 18px;
         line-height: 22px;
     }
+
     #play-button {
         top: 45%;
         transform: translate(-50%, -45%);
@@ -226,6 +284,10 @@ video {
         margin-top: 20px;
         margin-bottom: 20px;
     }
+    .product_img {
+        width: 220px;
+        height: 220px;
+    }
 }
 
 @media screen and (max-width: 576px) {
@@ -234,7 +296,7 @@ video {
         bottom: 40%;
     }
 
-    .swiper-horizontal>.swiper-pagination-bullets.swiper-pagination-bullets-dynamic, .swiper-pagination-horizontal.swiper-pagination-bullets.swiper-pagination-bullets-dynamic {
+    .swiper-horizontal > .swiper-pagination-bullets.swiper-pagination-bullets-dynamic, .swiper-pagination-horizontal.swiper-pagination-bullets.swiper-pagination-bullets-dynamic {
         left: 24px;
     }
 
@@ -242,10 +304,15 @@ video {
         font-size: 18px;
         line-height: 14px;
     }
+
     .slider_text_description {
         max-width: 280px;
         font-size: 12px;
         line-height: 14px;
+    }
+    .product_img {
+        width: 130px;
+        height: 130px;
     }
 }
 

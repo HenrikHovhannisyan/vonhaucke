@@ -38,7 +38,7 @@
             </div>
         </div>
     </section>
-    <section id="video" class="mb-5">
+    <section id="video">
         <div class="container-fluid ps-0 pe-0">
             <div class="video-container">
                 <video id="custom-video" width="100%" controls>
@@ -50,6 +50,24 @@
             </div>
         </div>
     </section>
+    <section id="products">
+        <div class="container text-center">
+            <h2 class="product_title">Popular products</h2>
+            <div class="products">
+                @foreach($products as $product)
+                    <div class="product_item">
+                        @foreach(json_decode($product->images) as $key => $imagePath)
+                            @if ($key === 0)
+                                <img src="{{ asset($imagePath) }}" class="img-fluid product_img" alt="">
+                            @endif
+                        @endforeach
+                        <p class="product_name">{{$product->name}}</p>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
+
     @include('layouts.footer')
 @endsection
 
