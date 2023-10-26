@@ -314,12 +314,49 @@ video {
     height: 100%;
 }
 
+#contact_us {
+    background-color: #000000;
+    padding-top: 60px;
+    padding-bottom: 350px;
+}
+
+#contact {
+    height: 800px;
+    background-image: url("../../public/img/bg_contact.png");
+    position: relative;
+}
+
+#container_form {
+    background-color: #3E3D3F;
+    padding: 60px 46px;
+    position: absolute;
+    bottom: -180px;
+    width: inherit;
+    max-width: 615px;
+}
+
+.btn-contact_form {
+    background-color: #9EBDB3;
+    font-family: Lora, serif;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 27px;
+    letter-spacing: 0;
+    color: #FFFFFA;
+    border-radius: 0;
+}
+
+.contact_form_group {
+    margin-bottom: 32px;
+}
+
 
 /*=============== BREAKPOINTS ===============*/
 @media screen and (max-width: 1200px) {
     .nav_link {
         margin-left: 0;
     }
+
     .product_img {
         width: 300px;
         height: 300px;
@@ -372,10 +409,12 @@ video {
         margin-top: 20px;
         margin-bottom: 20px;
     }
+
     .product_img {
         width: 220px;
         height: 220px;
     }
+
     .hover-show-button > a {
         width: 40px;
         height: 40px;
@@ -386,6 +425,12 @@ video {
         font-size: 22px;
         line-height: 22px;
     }
+
+    #all_products,
+    #products {
+        padding-top: 60px;
+    }
+
 }
 
 @media screen and (max-width: 576px) {
@@ -408,10 +453,12 @@ video {
         font-size: 12px;
         line-height: 14px;
     }
+
     .product_img {
         width: 130px;
         height: 130px;
     }
+
     .all_product_item {
         height: 215px;
     }
@@ -419,6 +466,10 @@ video {
     .all_product_name {
         font-size: 18px;
         line-height: 18px;
+    }
+
+    #container_form {
+        padding: 30px 23px;
     }
 }
 

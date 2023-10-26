@@ -96,6 +96,52 @@
             </div>
         </div>
     </section>
+    <section id="contact_us">
+        <div id="contact">
+            <div class="container">
+                <div class="col-11 col-lg-5 col-md-7 col-sm-9">
+                    <form id="container_form">
+                        <div class="form-group contact_form_group">
+                            <input type="number" name="nomber" class="form-control rounded-0" placeholder="Nomber" required>
+                        </div>
+                        <div class="form-group contact_form_group">
+                            <input type="text" name="company" class="form-control rounded-0" placeholder="Company" required>
+                        </div>
+                        <div class="form-group contact_form_group">
+                            <input type="email" name="mail" class="form-control rounded-0" placeholder="Mail" required>
+                        </div>
+                        <div class="form-group contact_form_group">
+                            <input type="tel" name="phone" class="form-control rounded-0" placeholder="Phone" required>
+                        </div>
+                        <div class="form-group contact_form_group">
+                            <select class="form-control rounded-0" name="type-information" required>
+                                <option>Select type of information</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                            </select>
+                        </div>
+                        <div class="form-group contact_form_group">
+                            <select class="form-control rounded-0" name="type-client" required>
+                                <option>Select type of client</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                            </select>
+                        </div>
+                        <div class="form-group contact_form_group">
+                            <textarea class="form-control rounded-0" name="message" rows="3" placeholder="Leave your message" required></textarea>
+                        </div>
+                        <div class="form-group text-end">
+                            <button class="btn btn-contact_form">Send</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
 
     @include('layouts.footer')
 @endsection
