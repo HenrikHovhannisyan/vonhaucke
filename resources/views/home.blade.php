@@ -72,6 +72,30 @@
             </div>
         </div>
     </section>
+    <section id="all_products">
+        <div class="container-fluid p-0 text-center">
+            <h2 class="container product_title">All products</h2>
+            <div class="container-fluid p-0">
+                <div class="row m-0">
+                    @foreach($all_products as $product)
+                        <div class="col-6 p-0 product_item all_product_item">
+                            @foreach(json_decode($product->images) as $key => $imagePath)
+                                @if ($key === 0)
+                                    <div class="hover-show all_hover-show">
+                                        <img src="{{ asset($imagePath) }}" class="img-fluid all_product_img" alt="">
+                                        <div class="hover-show-button">
+                                            <a href="{{ route('products-show',$product->id) }}">View</a>
+                                        </div>
+                                        <p class="all_product_name">{{$product->name}}</p>
+                                    </div>
+                                @endif
+                            @endforeach
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        </div>
+    </section>
 
     @include('layouts.footer')
 @endsection

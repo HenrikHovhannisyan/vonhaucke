@@ -23,7 +23,8 @@ class HomeController extends Controller
         $partners = Partner::all()->reverse()->take(4);
         $info = Info::all();
         $products = Product::inRandomOrder()->take(3)->get();
-        return view('home', compact('sliders', 'partners', 'info', 'products'));
+        $all_products = Product::all()->reverse()->take(4);
+        return view('home', compact('sliders', 'partners', 'info', 'products', 'all_products'));
     }
 
     /**
