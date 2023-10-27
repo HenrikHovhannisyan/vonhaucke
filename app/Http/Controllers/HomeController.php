@@ -35,6 +35,7 @@ class HomeController extends Controller
      */
     public function show(Product $product)
     {
-        return view('product-show', compact('product'));
+        $products = Product::inRandomOrder()->take(3)->get();
+        return view('product-show', compact('product', 'products'));
     }
 }
