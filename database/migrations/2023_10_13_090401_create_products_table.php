@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('description');
             $table->string('about');
-            $table->string('characteristics');
+            $table->text('characteristics');
             $table->json('images');
             $table->string('pdf');
             $table->timestamps();
