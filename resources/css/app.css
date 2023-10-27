@@ -1,6 +1,7 @@
 body {
     max-width: 1924px;
     margin: auto;
+    background-color: #000000;
 }
 
 a {
@@ -157,12 +158,12 @@ footer a {
 }
 
 #partners {
-    margin-top: 42px;
-    margin-bottom: 42px;
+    padding-top: 42px;
+    padding-bottom: 42px;
+    background-color: #FFFFFA;
 }
 
 .video-container {
-    background-color: #000000;
     position: relative;
     max-width: 100%;
     overflow: hidden;
@@ -204,7 +205,6 @@ video {
 
 #all_products,
 #products {
-    background-color: #000000;
     padding-top: 160px;
 }
 
@@ -315,7 +315,6 @@ video {
 }
 
 #contact_us {
-    background-color: #000000;
     padding-top: 60px;
     padding-bottom: 350px;
 }
