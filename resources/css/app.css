@@ -352,7 +352,8 @@ video {
 .banner {
     max-height: 600px;
 }
-.banner_image{
+
+.banner_image {
     max-width: 600px;
     max-height: 600px;
     width: 100%;
@@ -379,7 +380,7 @@ video {
 }
 
 .share,
-.share > a{
+.share > a {
     margin-top: 60px;
     font-family: Arial, serif;
     font-size: 24px;
@@ -387,6 +388,101 @@ video {
     line-height: 36px;
     letter-spacing: 0;
     color: #C1D6D0;
+}
+
+.about_title {
+    font-family: Lora, serif;
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 52px;
+    letter-spacing: 0;
+    color: #FFFFFA;
+    margin-bottom: 32px;
+}
+
+.about_info {
+    background-color: #1D1D1E;
+    padding: 100px;
+}
+
+.about_info_description {
+    font-family: Arial, serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 27px;
+    letter-spacing: 0;
+    color: #FFFFFA;
+}
+
+.characteristics_title {
+    font-family: Arial, serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 36px;
+    letter-spacing: 0;
+    color: #FFFFFA;
+    border-bottom: 1px solid #706F71;
+}
+
+.about_info_item {
+    font-family: Arial, serif;
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 0;
+    color: #FFFFFA;
+    list-style: none;
+    line-height: 75px;
+    border-bottom: 1px solid #706F71;
+}
+
+.download_pdf {
+    font-family: Arial, serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 36px;
+    letter-spacing: 0;
+    color: #C1D6D0;
+}
+
+#gallery {
+    padding-top: 160px;
+}
+
+#gallery h2 {
+    font-family: Lora, serif;
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 52px;
+    letter-spacing: 0;
+    color: #FFFFFA;
+}
+
+.swiper_about {
+    width: 100%;
+    max-height: 730px;
+    height: auto;
+}
+
+.swiper_about img {
+    width: unset;
+    max-height: 700px;
+}
+
+.swiper-pagination-vertical.swiper-pagination-bullets, .swiper-vertical > .swiper-pagination-bullets {
+    left: 15px;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: transparent;
+    border: 1px solid #C50000;
+    width: 12px;
+    height: 12px;
+}
+
+.swiper-pagination-bullet {
+    background-color: #B9B8BA;
+    width: 12px;
+    height: 12px;
 }
 
 
@@ -440,6 +536,24 @@ video {
 
     .all_product_item {
         height: 384px;
+    }
+
+    #all_products, #products, #gallery {
+        padding-top: 60px;
+    }
+
+    .about_info {
+        padding: 30px;
+    }
+
+    .about_info_description {
+        font-size: 14px;
+        line-height: 22px;
+    }
+
+    .about_info_item {
+        font-size: 14px;
+        line-height: 55px;
     }
 }
 
@@ -509,6 +623,20 @@ video {
 
     #container_form {
         padding: 30px 23px;
+    }
+
+    .banner_image {
+        max-width: 400px;
+        max-height: 400px;
+    }
+
+    .banner_title {
+        font-size: 36px;
+        line-height: 55px;
+    }
+
+    .share {
+        margin-top: 20px;
     }
 }
 

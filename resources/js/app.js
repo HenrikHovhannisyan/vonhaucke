@@ -38,3 +38,15 @@ function playVideo() {
     });
 }
 
+const swiper = new Swiper('.swiper_about', {
+    direction: 'vertical',
+    loop: true,
+    autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+    },
+    pagination: {
+        el: '.swiper-pagination',
+    },
+});
+

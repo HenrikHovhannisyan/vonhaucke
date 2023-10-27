@@ -35,7 +35,11 @@ class HomeController extends Controller
      */
     public function show(Product $product)
     {
+        $info = Info::all();
         $products = Product::inRandomOrder()->take(3)->get();
-        return view('product-show', compact('product', 'products'));
+        $text = Product::select('characteristics')->first();
+        $lines = explode("\n", $text->characteristics);
+
+        return view('product-show', compact('info','product', 'products', 'lines'));
     }
 }
