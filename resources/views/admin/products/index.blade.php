@@ -24,6 +24,7 @@
                 <th>No</th>
                 <th>Image</th>
                 <th>Name</th>
+                <th>Category</th>
                 <th width="280px">Action</th>
             </tr>
 
@@ -36,6 +37,9 @@
                         @endforeach
                     </td>
                     <td>{{ $product->name }}</td>
+                    <td>
+                        {{ $product->category->name }}
+                    </td>
                     <td>
                         <form action="{{ route('products.destroy',$product->id) }}" method="POST">
                             <a class="btn btn-success" href="{{ route('products.show',$product->id) }}">

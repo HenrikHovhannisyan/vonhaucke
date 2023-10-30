@@ -54,6 +54,16 @@
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
+                            <strong>Category:</strong>
+                            <select name="category_id" class="form-control">
+                                @foreach($categories as $category)
+                                    <option value="{{ $category->id }}" @if($product->category_id == $category->id) selected @endif>
+                                        {{ $category->name }}
+                                    </option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="form-group">
                             <strong>Image:</strong>
                             <input type="file" name="images[]" class="form-control" placeholder="image" multiple>
                             @foreach(json_decode($product->images) as $imagePath)

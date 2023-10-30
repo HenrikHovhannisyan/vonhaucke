@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreProductRequest;
@@ -33,7 +34,8 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('admin.products.create');
+        $categories = Category::all();
+        return view('admin.products.create', compact('categories'));
     }
 
     /**
@@ -51,6 +53,7 @@ class ProductController extends Controller
             'characteristics' => 'required',
             'images.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'pdf' => 'file|mimes:pdf|max:2048',
+            'category_id' => 'required|exists:categories,id',
         ]);
 
         $input = $request->all();
@@ -74,6 +77,8 @@ class ProductController extends Controller
             $pdfFile->move($destinationPath, $pdfFileName);
             $input['pdf'] = $destinationPath . '/' . $pdfFileName;
         }
+
+        $input['category_id'] = $request->category_id;
 
         Product::create($input);
 
@@ -101,7 +106,8 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        return view('admin.products.edit', compact('product'));
+        $categories = Category::all();
+        return view('admin.products.edit', compact('product', 'categories'));
     }
 
     /**
@@ -121,6 +127,7 @@ class ProductController extends Controller
             'characteristics' => 'required',
             'images.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'pdf' => 'file|mimes:pdf|max:2048',
+            'category_id' => 'required|exists:categories,id',
         ]);
 
         $input = $request->all();
@@ -162,6 +169,7 @@ class ProductController extends Controller
             }
         }
 
+        $input['category_id'] = $request->category_id;
         $product->update($input);
 
         return redirect()->route('products.index')

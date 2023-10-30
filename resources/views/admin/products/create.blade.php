@@ -48,6 +48,17 @@
                     </div>
                     <div class="col-12">
                         <div class="form-group">
+                            <strong>Category:</strong>
+                            <select name="category_id" class="form-control">
+                                <option value="">Select a category</option>
+                                @foreach($categories as $category)
+                                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-group">
                             <strong>Images:</strong>
                             <input type="file" name="images[]" class="form-control" multiple>
                         </div>

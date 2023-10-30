@@ -31,6 +31,10 @@
                     <p class="h3">{{ $product->characteristics }}</p>
                 </div>
                 <div class="form-group">
+                    <strong>Category:</strong>
+                    <p class="h3">{{ $product->category->name }}</p>
+                </div>
+                <div class="form-group">
                     <strong>PDF:</strong>
                     <p class="h3">
                         <a href="{{ asset($product->pdf) }}" class="text-dark" target="_blank">View File</a>
