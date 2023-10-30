@@ -77,19 +77,16 @@
             <h2 class="container product_title">All products</h2>
             <div class="container-fluid p-0">
                 <div class="row m-0">
-                    @foreach($all_products as $product)
+                    @foreach($categories as $category)
                         <div class="col-6 p-0 product_item all_product_item">
-                            @foreach(json_decode($product->images) as $key => $imagePath)
-                                @if ($key === 0)
-                                    <div class="hover-show all_hover-show">
-                                        <img src="{{ asset($imagePath) }}" class="img-fluid all_product_img" alt="">
-                                        <div class="hover-show-button">
-                                            <a href="{{ route('products-show',$product->id) }}">View</a>
-                                        </div>
-                                        <p class="all_product_name">{{$product->name}}</p>
-                                    </div>
-                                @endif
-                            @endforeach
+                            <div class="hover-show all_hover-show">
+                                <img src="{{asset('img/categories/'.$category->image)}}"
+                                     class="img-fluid all_product_img" alt="">
+                                <div class="hover-show-button">
+                                    <a href="{{ route('products-show',$category->id) }}">View</a>
+                                </div>
+                                <p class="all_product_name">{{$category->name}}</p>
+                            </div>
                         </div>
                     @endforeach
                 </div>
@@ -102,10 +99,12 @@
                 <div class="col-11 col-lg-5 col-md-7 col-sm-9">
                     <form id="container_form">
                         <div class="form-group contact_form_group">
-                            <input type="number" name="nomber" class="form-control rounded-0" placeholder="Nomber" required>
+                            <input type="number" name="nomber" class="form-control rounded-0" placeholder="Nomber"
+                                   required>
                         </div>
                         <div class="form-group contact_form_group">
-                            <input type="text" name="company" class="form-control rounded-0" placeholder="Company" required>
+                            <input type="text" name="company" class="form-control rounded-0" placeholder="Company"
+                                   required>
                         </div>
                         <div class="form-group contact_form_group">
                             <input type="email" name="mail" class="form-control rounded-0" placeholder="Mail" required>
@@ -132,7 +131,8 @@
                             </select>
                         </div>
                         <div class="form-group contact_form_group">
-                            <textarea class="form-control rounded-0" name="message" rows="3" placeholder="Leave your message" required></textarea>
+                            <textarea class="form-control rounded-0" name="message" rows="3"
+                                      placeholder="Leave your message" required></textarea>
                         </div>
                         <div class="form-group text-end">
                             <button class="btn btn-contact_form">Send</button>

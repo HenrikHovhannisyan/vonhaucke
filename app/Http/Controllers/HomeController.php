@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Info;
 use App\Models\Partner;
 use App\Models\Product;
@@ -23,8 +24,8 @@ class HomeController extends Controller
         $partners = Partner::all()->reverse()->take(4);
         $info = Info::all();
         $products = Product::inRandomOrder()->take(3)->get();
-        $all_products = Product::all()->reverse()->take(4);
-        return view('home', compact('sliders', 'partners', 'info', 'products', 'all_products'));
+        $categories = Category::all()->reverse()->take(4);
+        return view('home', compact('sliders', 'partners', 'info', 'products', 'categories'));
     }
 
     /**
