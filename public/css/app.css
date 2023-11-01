@@ -321,8 +321,10 @@ video {
 
 #contact {
     height: 800px;
-    background-image: url("/img/bg_contact.png") !important;
+    background-image: url("/img/bg_contact.png");
     position: relative;
+    background-position: center;
+    background-size: cover;
 }
 
 #container_form {
