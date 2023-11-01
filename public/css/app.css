@@ -321,7 +321,7 @@ video {
 
 #contact {
     height: 800px;
-    background-image: url("../../public/img/bg_contact.png");
+    background-image: url("/img/bg_contact.png") !important;
     position: relative;
 }
 
