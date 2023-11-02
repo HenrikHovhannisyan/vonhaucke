@@ -42,7 +42,7 @@
         <div class="container-fluid ps-0 pe-0">
             <div class="video-container">
                 <video id="custom-video" width="100%" controls>
-                    <source src="{{asset('/videos/1.mp4')}}" type="video/mp4">
+                    <source src="{{ asset('/videos/1.mp4') }}?v=<?php echo filemtime(public_path('videos/1.mp4')); ?>" type="video/mp4">
                 </video>
                 <button id="play-button" onclick="playVideo()">
                     <i class="fa-solid fa-play"></i>
