@@ -10,6 +10,8 @@ use App\Models\Slider;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
@@ -26,6 +28,25 @@ class HomeController extends Controller
         $products = Product::inRandomOrder()->take(3)->get();
         $categories = Category::all()->reverse()->take(4);
         return view('home', compact('sliders', 'partners', 'info', 'products', 'categories'));
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param Request $request
+     * @return Factory|View
+     */
+
+    public function search(Request $request)
+    {
+        $info = Info::all();
+        $search = $request->input('search');
+
+        $products = Product::query()
+            ->where('name', 'like', "%$search%")
+            ->get();
+
+        return view('search', ['products' => $products], compact('info'));
     }
 
     /**

@@ -63,7 +63,7 @@
                         <a class="nav-link nav_link" href="#">CONTACT</a>
                     </li>
                     <li class="nav-item">
-                        <form class="navbar-form navbar-right navbar-form-search" role="search">
+                        <form action="{{ route('search') }}" method="GET" class="navbar-form navbar-right navbar-form-search" role="search">
                             <div class="search-form-container hdn" id="search-input-container">
                                 <div class="search-input-group">
                                     <button type="button" class="order-2 order-md-1 btn btn-default" id="hide-search-input-container">
@@ -71,7 +71,7 @@
                                     </button>
                                     <div class="order-1 order-md-2 form-group">
                                         <label>
-                                            <input type="text" class="form-control" placeholder="Search for...">
+                                            <input type="text" class="form-control" name="search" placeholder="Search for...">
                                         </label>
                                     </div>
                                 </div>

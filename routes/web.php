@@ -33,6 +33,7 @@ Route::middleware(['auth', 'is_admin'])->prefix('admin')->group(function () {
 Auth::routes();
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/search', [HomeController::class, 'search'])->name('search');
 Route::get('/product/{product}', [HomeController::class, 'show'])->name('products-show');
 Route::get('/category/{category}', [HomeController::class, 'showCategory'])->name('category-show');
 

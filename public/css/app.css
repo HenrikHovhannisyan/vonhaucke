@@ -553,6 +553,13 @@ video {
     object-fit: cover;
 }
 
+.no_product {
+    height: calc(100vh - 360px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFA;
+}
 
 /*=============== BREAKPOINTS ===============*/
 @media screen and (max-width: 1200px) {
