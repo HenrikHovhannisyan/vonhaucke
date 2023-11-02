@@ -537,6 +537,22 @@ video {
     color: #FFFFFA;
 }
 
+#caetgory_products {
+    margin: 160px auto;
+}
+
+.products_category {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.category_product_img {
+    width: 615px;
+    height: 615px;
+    object-fit: cover;
+}
+
 
 /*=============== BREAKPOINTS ===============*/
 @media screen and (max-width: 1200px) {
@@ -557,6 +573,11 @@ video {
 
     .all_product_item {
         height: 512px;
+    }
+
+    .category_product_img {
+        width: 460px;
+        height: 460px;
     }
 }
 
@@ -594,6 +615,10 @@ video {
         padding-top: 60px;
     }
 
+    #caetgory_products {
+        margin: 60px auto;
+    }
+
     .about_info {
         padding: 30px;
     }
@@ -606,6 +631,11 @@ video {
     .about_info_item {
         font-size: 14px;
         line-height: 55px;
+    }
+
+    .category_product_img {
+        width: 340px;
+        height: 340px;
     }
 }
 
@@ -634,6 +664,11 @@ video {
     #all_products,
     #products {
         padding-top: 60px;
+    }
+
+    .category_product_img {
+        width: 195px;
+        height: 195px;
     }
 
 }

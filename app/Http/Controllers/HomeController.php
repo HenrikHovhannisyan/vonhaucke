@@ -47,7 +47,7 @@ class HomeController extends Controller
     public function showCategory(Category $category)
     {
         $info = Info::all();
-
-        return view('category-show', compact('info', 'category'));
+        $products = Product::where('category_id', '=', $category->id)->get();
+        return view('category-show', compact('info', 'category', 'products'));
     }
 }
