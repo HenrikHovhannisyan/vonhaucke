@@ -43,4 +43,11 @@ class HomeController extends Controller
 
         return view('product-show', compact('info','product', 'products', 'lines'));
     }
+
+    public function showCategory(Category $category)
+    {
+        $info = Info::all();
+
+        return view('category-show', compact('info', 'category'));
+    }
 }

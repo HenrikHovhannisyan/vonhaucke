@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
 body {
     max-width: 1924px;
     margin: auto;
@@ -327,6 +329,17 @@ video {
     background-size: cover;
 }
 
+.form_title {
+    font-family: Lora;
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 52px;
+    letter-spacing: 0;
+    color: #FFFFFA;
+    margin-bottom: 22px;
+    text-align: center;
+}
+
 #container_form {
     background-color: #3E3D3F;
     padding: 60px 46px;
@@ -485,6 +498,43 @@ video {
     background-color: #B9B8BA;
     width: 12px;
     height: 12px;
+}
+
+
+.banner_category {
+    max-width: 1920px;
+    height: 41.6vw;
+    width: 100%;
+    position: relative;
+}
+
+.banner-content {
+    position: absolute;
+    top: 50%;
+    transform: translate(0%, -50%);
+    text-align: left;
+    color: #fff;
+}
+
+.banner-content h1 {
+    font-size: 3em;
+    margin: 0;
+    font-family: Lora, serif;
+    font-style: italic;
+    font-weight: 500;
+    line-height: 83px;
+    letter-spacing: 0;
+    color: #FFFFFA;
+}
+
+.banner-content p {
+    font-size: 1.2em;
+    margin: 10px 0;
+    font-family: Arial, serif;
+    font-weight: 400;
+    line-height: 36px;
+    letter-spacing: 0;
+    color: #FFFFFA;
 }
 
 

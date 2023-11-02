@@ -83,7 +83,7 @@
                                 <img src="{{asset('img/categories/'.$category->image)}}"
                                      class="img-fluid all_product_img" alt="">
                                 <div class="hover-show-button">
-                                    <a href="{{ route('products-show',$category->id) }}">View</a>
+                                    <a href="{{ route('category-show',$category->id) }}">View</a>
                                 </div>
                                 <p class="all_product_name">{{$category->name}}</p>
                             </div>
@@ -98,6 +98,7 @@
             <div class="container">
                 <div class="col-11 col-lg-5 col-md-7 col-sm-9">
                     <form id="container_form">
+                        <h2 class="form_title">Contact Us</h2>
                         <div class="form-group contact_form_group">
                             <input type="number" name="nomber" class="form-control rounded-0" placeholder="Nomber"
                                    required>

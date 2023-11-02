@@ -34,4 +34,5 @@ Auth::routes();
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/product/{product}', [HomeController::class, 'show'])->name('products-show');
+Route::get('/category/{category}', [HomeController::class, 'showCategory'])->name('category-show');
 
