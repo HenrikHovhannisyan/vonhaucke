@@ -51,16 +51,16 @@
                 <!-- Left Side Of Navbar -->
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link nav_link" href="#products">PRODUCTS</a>
+                        <a class="nav-link nav_link" href="/#products">PRODUCTS</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link nav_link" href="#all_products">PROJECTS</a>
+                        <a class="nav-link nav_link" href="/#all_products">PROJECTS</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link nav_link" href="#">SHOWROOM</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link nav_link" href="#contact_us">CONTACT</a>
+                        <a class="nav-link nav_link" href="/#contact_us">CONTACT</a>
                     </li>
                     <li class="nav-item">
                         <form action="{{ route('search') }}" method="GET" class="navbar-form navbar-right navbar-form-search" role="search">
