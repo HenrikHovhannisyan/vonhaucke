@@ -36,8 +36,8 @@
 </button>
 
 <div id="app">
-    <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-        <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+        <div class="container-fluid">
             <a class="navbar-brand" href="{{ url('/') }}">
                 <img src="{{ asset('./img/logo.png') }}" height="55" alt="Logo">
             </a>
@@ -51,13 +51,22 @@
                 <!-- Left Side Of Navbar -->
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link nav_link" href="/#products">PRODUCTS</a>
+                        <a class="nav-link nav_link" href="/#products">Producto</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link nav_link" href="/#all_products">PROJECTS</a>
+                        <a class="nav-link nav_link" href="/#all_products">Servicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link nav_link" href="#">SHOWROOM</a>
+                        <a class="nav-link nav_link" href="#">Historia</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav_link" href="#">Proyecto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav_link" href="#">Showrooms</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav_link" href="#">Contáctanos</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link nav_link" href="/#contact_us">CONTACT</a>
