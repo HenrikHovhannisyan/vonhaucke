@@ -40,6 +40,52 @@ footer a {
     font-size: 26px;
 }
 
+.dropdown,
+.dropdownSillones{
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content,
+.dropdownSillonesDropdown-content{
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    width: max-content;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    z-index: 2;
+    left: 30px;
+}
+
+.dropdown-content a,
+.dropdownSillonesNav_link {
+    padding: 3px 16px!important;
+    text-decoration: none;
+    display: block;
+    color: #434445;
+    font-family: Arial, serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 27px;
+    letter-spacing: 0;
+
+}
+
+.dropdown-content a:hover,
+.dropdownSillonesNav_link:hover{
+    color: #FF0000;
+}
+
+.dropdown:hover .dropdown-content,
+.dropdownSillones:hover .dropdownSillonesDropdown-content{
+    display: block;
+}
+
+.dropdown:hover .nav_link {
+    border-bottom: 3px solid #FF0000;
+    line-height: 27px;
+}
+
 .nav_link {
     font-family: Arial, serif;
     font-size: 18px;
